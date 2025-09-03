@@ -21,7 +21,7 @@ async function download(url, path) {
 
 async function downloadIso() {
   const url = 'https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml';
-  const path = 'iso-4217-list-one.xml';
+  const path = 'resources/iso-4217/list-one.xml';
 
   try {
     await download(url, path);

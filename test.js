@@ -1,4 +1,4 @@
-var cc = require('./index');
+var cc = require('./dist/index.js');
 var assert = require('assert');
 
 assert(cc.code('EUR').countries.length === 36);

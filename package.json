@@ -1,7 +1,20 @@
 {
   "name": "currency-codes",
-  "types": "index.d.ts",
   "version": "2.2.0",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "data"
+  ],
   "description": "Lookup currency codes based on ISO 4217",
   "repository": "git://github.com/freeall/currency-codes.git",
   "keywords": [
@@ -14,19 +27,23 @@
     "codes",
     "lookup"
   ],
-  "dependencies": {
-    "first-match": "~0.0.1",
-    "nub": "~0.0.0"
-  },
   "devDependencies": {
     "@gouch/to-title-case": "^2.2.1",
+    "@types/node": "^20.0.0",
     "axios": "^0.19.2",
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0",
     "xml2js": "^0.4.23"
   },
   "scripts": {
-    "test": "node test.js",
-    "iso:fetch-xml": "node scripts/fetch-iso-4217-xml.js",
-    "iso:ingest-xml": "node scripts/ingest-iso-4217-xml.js",
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "prepublishOnly": "npm run build",
+    "test": "npm run build && node test.js",
+    "test:esm": "npm run build && node --input-type=module --eval \"import('./dist/index.mjs').then(cc => { console.log('ESM import successful:', typeof cc.code); console.log('USD test:', cc.code('USD').currency); })\"",
+    "test:cjs": "npm run build && node --eval \"const cc = require('./dist/index.js'); console.log('CommonJS require works:', typeof cc.code); console.log('USD test:', cc.code('USD').currency)\"",
+    "iso:fetch-xml": "node scripts/iso-4217/fetch.js",
+    "iso:ingest-xml": "node scripts/iso-4217/ingest.js",
     "iso": "npm run iso:fetch-xml && npm run iso:ingest-xml"
   },
   "license": "MIT"
