@@ -1,5 +1,5 @@
 {
-  "publishDate": "2024-06-25",
+  "publishDate": "2025-05-12",
   "currencies": [
     {
       "code": "AED",
@@ -35,16 +35,6 @@
       "currency": "Armenian Dram",
       "countries": [
         "Armenia"
-      ]
-    },
-    {
-      "code": "ANG",
-      "number": "532",
-      "digits": 2,
-      "currency": "Netherlands Antillean Guilder",
-      "countries": [
-        "Curaçao",
-        "Sint Maarten (Dutch Part)"
       ]
     },
     {
@@ -341,15 +331,6 @@
       "currency": "Costa Rican Colon",
       "countries": [
         "Costa Rica"
-      ]
-    },
-    {
-      "code": "CUC",
-      "number": "931",
-      "digits": 2,
-      "currency": "Peso Convertible",
-      "countries": [
-        "Cuba"
       ]
     },
     {
@@ -1499,6 +1480,15 @@
       ]
     },
     {
+      "code": "XAD",
+      "number": "396",
+      "digits": 2,
+      "currency": "Arab Accounting Dinar",
+      "countries": [
+        "Arab Monetary Fund"
+      ]
+    },
+    {
       "code": "XAF",
       "number": "950",
       "digits": 0,
@@ -1580,6 +1570,16 @@
         "Saint Kitts and Nevis",
         "Saint Lucia",
         "Saint Vincent and the Grenadines"
+      ]
+    },
+    {
+      "code": "XCG",
+      "number": "532",
+      "digits": 2,
+      "currency": "Caribbean Guilder",
+      "countries": [
+        "Curaçao",
+        "Sint Maarten (Dutch Part)"
       ]
     },
     {
