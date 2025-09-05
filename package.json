@@ -47,8 +47,8 @@
     "test:watch": "npm run build && vitest",
     "test:ui": "npm run build && vitest --ui",
     "test:performance": "npm run build && vitest run ingest.performance.test.ts",
-    "test:esm": "npm run build && node --input-type=module --eval \"import('./dist/index.mjs').then(cc => { console.log('ESM import successful:', typeof cc.code); console.log('USD test:', cc.code('USD').currency); })\"",
-    "test:cjs": "npm run build && node --eval \"const cc = require('./dist/index.js'); console.log('CommonJS require works:', typeof cc.code); console.log('USD test:', cc.code('USD').currency)\"",
+    "test:esm": "npm run build && node --input-type=module test/esm.test.js",
+    "test:cjs": "npm run build && node test/cjs.test.js",
     "iso:fetch-xml": "tsx scripts/iso-4217/fetch.ts",
     "iso:ingest-xml": "tsx scripts/iso-4217/ingest.ts",
     "iso": "npm run iso:fetch-xml && npm run iso:ingest-xml"
