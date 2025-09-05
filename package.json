@@ -32,6 +32,7 @@
     "@types/node": "^20.0.0",
     "axios": "^0.19.2",
     "tsup": "^8.0.0",
+    "tsx": "^4.20.5",
     "typescript": "^5.0.0",
     "xml2js": "^0.4.23"
   },
@@ -43,8 +44,8 @@
     "test": "npm run build && node test.js",
     "test:esm": "npm run build && node --input-type=module --eval \"import('./dist/index.mjs').then(cc => { console.log('ESM import successful:', typeof cc.code); console.log('USD test:', cc.code('USD').currency); })\"",
     "test:cjs": "npm run build && node --eval \"const cc = require('./dist/index.js'); console.log('CommonJS require works:', typeof cc.code); console.log('USD test:', cc.code('USD').currency)\"",
-    "iso:fetch-xml": "node scripts/iso-4217/fetch.js",
-    "iso:ingest-xml": "node scripts/iso-4217/ingest.js",
+    "iso:fetch-xml": "tsx scripts/iso-4217/fetch.ts",
+    "iso:ingest-xml": "tsx scripts/iso-4217/ingest.ts",
     "iso": "npm run iso:fetch-xml && npm run iso:ingest-xml"
   },
   "license": "MIT"
