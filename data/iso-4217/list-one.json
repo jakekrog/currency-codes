@@ -711,7 +711,7 @@
       "code": "KMF",
       "number": "174",
       "digits": 0,
-      "currency": "Comorian Franc ",
+      "currency": "Comorian Franc",
       "countries": [
         "Comoros (The)"
       ]
@@ -1588,7 +1588,7 @@
       "digits": 0,
       "currency": "SDR (Special Drawing Right)",
       "countries": [
-        "International Monetary Fund (Imf) "
+        "International Monetary Fund (Imf)"
       ]
     },
     {
