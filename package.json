@@ -30,12 +30,13 @@
   "devDependencies": {
     "@gouch/to-title-case": "^2.2.1",
     "@types/node": "^20.0.0",
+    "@vitest/ui": "^3.2.4",
     "axios": "^0.19.2",
+    "fast-xml-parser": "^4.3.0",
     "tsup": "^8.0.0",
     "tsx": "^4.20.5",
     "typescript": "^5.0.0",
-    "vitest": "^3.2.4",
-    "xml2js": "^0.4.23"
+    "vitest": "^3.2.4"
   },
   "scripts": {
     "build": "tsup",
@@ -44,6 +45,7 @@
     "prepublishOnly": "npm run build",
     "test": "npm run build && vitest run",
     "test:watch": "npm run build && vitest",
+    "test:ui": "npm run build && vitest --ui",
     "test:performance": "npm run build && vitest run ingest.performance.test.ts",
     "test:esm": "npm run build && node --input-type=module --eval \"import('./dist/index.mjs').then(cc => { console.log('ESM import successful:', typeof cc.code); console.log('USD test:', cc.code('USD').currency); })\"",
     "test:cjs": "npm run build && node --eval \"const cc = require('./dist/index.js'); console.log('CommonJS require works:', typeof cc.code); console.log('USD test:', cc.code('USD').currency)\"",
