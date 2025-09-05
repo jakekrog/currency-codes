@@ -34,6 +34,7 @@
     "tsup": "^8.0.0",
     "tsx": "^4.20.5",
     "typescript": "^5.0.0",
+    "vitest": "^3.2.4",
     "xml2js": "^0.4.23"
   },
   "scripts": {
@@ -41,7 +42,9 @@
     "dev": "tsup --watch",
     "prepare": "npm run build",
     "prepublishOnly": "npm run build",
-    "test": "npm run build && node test.js",
+    "test": "npm run build && vitest run",
+    "test:watch": "npm run build && vitest",
+    "test:performance": "npm run build && vitest run ingest.performance.test.ts",
     "test:esm": "npm run build && node --input-type=module --eval \"import('./dist/index.mjs').then(cc => { console.log('ESM import successful:', typeof cc.code); console.log('USD test:', cc.code('USD').currency); })\"",
     "test:cjs": "npm run build && node --eval \"const cc = require('./dist/index.js'); console.log('CommonJS require works:', typeof cc.code); console.log('USD test:', cc.code('USD').currency)\"",
     "iso:fetch-xml": "tsx scripts/iso-4217/fetch.ts",
