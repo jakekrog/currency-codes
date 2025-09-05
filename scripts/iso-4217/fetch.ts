@@ -1,9 +1,8 @@
-const path = require('path');
-const fs = require('fs');
-const axios = require('axios');
+import * as fs from 'node:fs';
+import axios from 'axios';
 
-async function download(url, path) {
-  const writer = fs.createWriteStream(path);
+async function download(url: string, filePath: string): Promise<void> {
+  const writer = fs.createWriteStream(filePath);
 
   const response = await axios({
     url,
@@ -19,16 +18,15 @@ async function download(url, path) {
   });
 }
 
-async function downloadIso() {
+async function downloadIso(): Promise<void> {
   const url = 'https://www.six-group.com/dam/download/financial-information/data-center/iso-currrency/lists/list-one.xml';
-  const path = 'resources/iso-4217/list-one.xml';
+  const filePath = 'resources/iso-4217/list-one.xml';
 
   try {
-    await download(url, path);
-
-    console.log('Downloaded ' + url + ' to ' + path);
+    await download(url, filePath);
+    console.log(`Downloaded ${url} to ${filePath}`);
   } catch (e) {
-    console.error('Error downloading ' + url);
+    console.error(`Error downloading ${url}`);
     console.error(e);
     process.exit(1);
   }
