@@ -36,7 +36,7 @@ describe('Ingest Performance Tests', () => {
       attributeNamePrefix: '@_',
       parseAttributeValue: false,
       parseTagValue: false,
-      trimValues: false,
+      trimValues: true,
     });
   });
 

@@ -95,7 +95,7 @@ fs.readFile(input, (err: NodeJS.ErrnoException | null, data: Buffer) => {
       attributeNamePrefix: '@_',
       parseAttributeValue: false,
       parseTagValue: false,
-      trimValues: false,
+      trimValues: true,
     });
 
     const result: XmlData = parser.parse(data.toString());
