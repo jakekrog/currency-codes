@@ -4,15 +4,11 @@ import * as path from 'node:path';
 import { performance } from 'node:perf_hooks';
 import { XMLParser } from 'fast-xml-parser';
 import { CurrencyCodeRecord } from '../src/types';
-import { 
-  XmlEntry, 
-  XmlData, 
-  ingestEntry, 
-  indexByCode, 
-  compareCurrencyCode, 
-  ingestEntries, 
-  ingestPublishDate 
-} from '../scripts/iso-4217/ingest';
+import {
+  XmlData,
+  ingestEntries,
+  ingestPublishDate,
+} from '../scripts/iso-4217/ingest-lib';
 
 // Extend String prototype for toTitleCase (same as in ingest.ts)
 declare global {
@@ -116,4 +112,5 @@ describe('Ingest Performance Tests', () => {
       expect(results[i][results[i].length - 1]?.code).toBe(results[0][results[0].length - 1]?.code);
     }
   });
+
 });
