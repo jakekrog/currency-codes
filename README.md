@@ -177,6 +177,31 @@ Wrote publish date to iso-4217-publish-date.js
 
 Note: You may have to manually tweak the capitalization of some country's names.
 
+## Development
+
+### Configuration
+
+The project uses environment variables for configuration. Copy `env.example` to `.env` and adjust the values as needed:
+
+```bash
+cp env.example .env
+```
+
+Available configuration options:
+- `ISO_4217_URL`: URL to download the ISO 4217 XML data
+- `ISO_4217_XML_PATH`: Local path to store the downloaded XML file
+- `ISO_4217_JSON_PATH`: Local path to store the processed JSON file
+
+### Updating Currency Data
+
+To update the currency data from the official ISO 4217 source:
+
+```bash
+npm run iso
+```
+
+This will download the latest XML data and process it into the JSON format used by the library.
+
 # License
 
 MIT
