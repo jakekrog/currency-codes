@@ -43,7 +43,7 @@ describe('Currency Codes', () => {
 
   it('should return all countries', () => {
     const countries = cc.countries();
-    expect(countries.length).toBe(260);
+    expect(countries.length).toBe(261);
   });
 
   it('should return all currency numbers', () => {
